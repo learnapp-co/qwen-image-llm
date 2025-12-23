@@ -42,8 +42,8 @@ sudo apt-get install -y nvidia-container-toolkit
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 
-echo "[prep] Verifying GPU visibility in containers..."
-docker run --rm --gpus all nvidia/cuda:12.4.1-base-ubuntu22.04 nvidia-smi
+echo "[prep] Verifying GPU visibility in containers (Ubuntu 24.04 base)..."
+docker run --rm --gpus all nvidia/cuda:12.4.1-base-ubuntu24.04 nvidia-smi
 
 echo "[prep] Done. Log out and back in (or run 'newgrp docker') before running Docker without sudo."
 

@@ -1,5 +1,6 @@
-# PyTorch 2.9.0 + CUDA 12.4 + cuDNN 9 runtime base
-FROM pytorch/pytorch:2.9.0-cuda12.4-cudnn9-runtime
+# PyTorch runtime base (pick an available tag)
+# Use 2.5.1 CUDA 12.4 cuDNN 9 runtime (available on Docker Hub).
+FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 
 ENV DEBIAN_FRONTEND=noninteractive \
     HF_HOME=/opt/hf-cache \
