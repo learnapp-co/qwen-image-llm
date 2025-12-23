@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    image: qwen-image-layered
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    environment:
+      HF_HOME: /opt/hf-cache
+    volumes:
+      - /data/hf-cache:/opt/hf-cache
+    command: ["python", "-m", "uvicorn", "serve:app", "--host", "0.0.0.0", "--port", "8000"]
+
